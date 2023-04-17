@@ -16,11 +16,11 @@
 
     @if (TextArea)
     {
-        <textarea style="@InputStyle" @ref="InputRef"  placeholder="@PlaceHolder" required=@Required class="@InputClassMapper.AsString()" id="@Id" @bind="@CurrentValueAsString" aria-label="@Label" oninput="@OnInput" @onkeydown="@OnKeyDownEvent()" onkeyup=@OnKeyUp onfocusout="@OnFocusOutEvent.Value" onkeypress="@OnKeyPress" onfocus="@OnFocusEvent.Value" disabled=@Disabled readonly="@InputTextReadOnly()" @attributes="Attributes" />
+        <textarea style="@InputStyle" @ref="InputRef"  placeholder="@PlaceHolder" required=@Required class="@InputClassMapper.AsString()" id="@Id" @bind="@CurrentValueAsString" @bind:event="@BindEvent" aria-label="@Label" oninput="@OnInput" @onkeydown="@OnKeyDownEvent()" onkeyup=@OnKeyUp onfocusout="@OnFocusOutEvent.Value" onkeypress="@OnKeyPress" onfocus="@OnFocusEvent.Value" disabled=@Disabled readonly="@InputTextReadOnly()" @attributes="Attributes" />
     }
     else
     {
-        <input style="@InputStyle" @ref="InputRef" type="@Type" placeholder="@PlaceHolder" required=@Required class="@InputClassMapper.AsString()" id="@Id" @bind="@CurrentValueAsString" aria-label="@Label" oninput="@OnInput" @onkeydown="@OnKeyDownEvent()" onkeyup=@OnKeyUp onfocusout=@OnFocusOutEvent.Value onkeypress="@OnKeyPress" onfocus="@OnFocusEvent.Value" disabled=@Disabled readonly="@InputTextReadOnly()" @attributes="Attributes"/>
+        <input style="@InputStyle" @ref="InputRef" type="@Type" placeholder="@PlaceHolder" required=@Required class="@InputClassMapper.AsString()" id="@Id" @bind="@CurrentValueAsString" @bind:event="@BindEvent" aria-label="@Label" oninput="@OnInput" @onkeydown="@OnKeyDownEvent()" onkeyup=@OnKeyUp onfocusout=@OnFocusOutEvent.Value onkeypress="@OnKeyPress" onfocus="@OnFocusEvent.Value" disabled=@Disabled readonly="@InputTextReadOnly()" @attributes="Attributes"/>
     }
 
 

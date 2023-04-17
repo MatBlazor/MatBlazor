@@ -1254,3 +1254,52 @@
     ")></BlazorFiddle>
     </SourceContent>
 </DemoContainer>
+
+
+<h5 class="mat-h5">Bind Event</h5>
+
+<DemoContainer>
+    <Content>
+
+
+        <p>
+            <MatStringField @bind-Value="@MyString11" Label="Update on Change"></MatStringField>
+            Value: @MyString11
+        </p>
+
+        <p>
+            <MatStringField @bind-Value="@MyString12" UpdateOnInput="true" Label="Update On Input"></MatStringField>
+            Value: @MyString12
+        </p>
+
+        @code
+        {
+            public string MyString11 { get; set; }
+            public string MyString12 {get;set;}
+        }
+
+    </Content>
+    <SourceContent>
+        <BlazorFiddle Template="MatBlazor" Code=@(@"
+
+       
+        <p>
+            <MatStringField @bind-Value=""@MyString11"" Label=""Update on Change""></MatStringField>
+            Value: @MyString11
+        </p>
+
+        <p>
+            <MatStringField @bind-Value=""@MyString12"" UpdateOnInput=""true"" Label=""Update On Input""></MatStringField>
+            Value: @MyString12
+        </p>
+
+        @code
+        {
+ 
+            public string MyString11 {get;set;}
+            public string MyString12 {get;set;}
+        }
+
+    ")></BlazorFiddle>
+    </SourceContent>
+</DemoContainer>
