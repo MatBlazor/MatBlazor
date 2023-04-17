@@ -78,11 +78,9 @@ namespace MatBlazor
                 }
                 else
                 {
-                    var selected = new HashSet<MatChip>(value);
+                    var selected = new HashSet<string>(value.Select(x => x.Label));
                     foreach (var chip in _chips)
-                    {
-                        chip.IsSelected = selected.Contains(chip);
-                    }
+                        chip.IsSelected = selected.Contains(chip.Label);
                 }
                 this.InvokeAsync(StateHasChanged);
             }
